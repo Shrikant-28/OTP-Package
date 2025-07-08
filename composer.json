@@ -1,16 +1,24 @@
 {
-  "name": "shrikant/otp",
-  "description": "A framework-agnostic OTP generator and validator",
-  "type": "library",
-  "autoload": {
-    "psr-4": {
-      "Shrikant\\OTP\\": "src/"
-    }
-  },
-  "require": {
-    "php": ">=7.4"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "^9.6"
-  }
+    "name": "shrikant/otp",
+    "description": "A framework-agnostic OTP generator and validator",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Shrikant Dharam",
+            "email": "dharamshrikant6@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Shrikant\\OTP\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.6"
+    },
+    "license": "MIT"
 }
