@@ -1,7 +1,3 @@
-Here's a full setup for your **framework-agnostic OTP PHP package**, including Git repo structure and a suggested `README.md`.
-
----
-
 ## 📂 Git Repo: `otp`
 
 ### Directory Tree
@@ -47,7 +43,7 @@ otp/
 ## 📦 Installation
 
 ```bash
-composer require yourname/otp
+composer require shrikant/otp
 ````
 
 ---
@@ -55,8 +51,8 @@ composer require yourname/otp
 ## 🛠️ Usage
 
 ```php
-use YourVendor\OTP\OTP;
-use YourVendor\OTP\Storage\OTPStoreInterface;
+use Shrikant\OTP\OTP;
+use Shrikant\OTP\Storage\OTPStoreInterface;
 
 class SessionStore implements OTPStoreInterface {
     public function set(string $key, string $otp, int $ttl): void {
@@ -121,52 +117,3 @@ MIT License. Do what you want.
 ## ❤️ Contributing
 
 Pull requests and issues are welcome!
-
-````
-
----
-
-## 📄 .gitignore
-
-```gitignore
-/vendor
-/.idea
-/.vscode
-composer.lock
-````
-
----
-
-## 🧪 phpunit.xml (Optional)
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<phpunit bootstrap="vendor/autoload.php"
-         colors="true"
-         verbose="true">
-    <testsuites>
-        <testsuite name="OTP Test Suite">
-            <directory>./tests</directory>
-        </testsuite>
-    </testsuites>
-</phpunit>
-```
-
----
-
-## ✅ Git Repo Setup
-
-Now in your terminal:
-
-```bash
-git init
-git add .
-git commit -m "Initial commit: framework-agnostic OTP package"
-gh repo create yourname/otp --public --source=. --push
-```
-
-*(Replace `yourname` with your GitHub username. You need [GitHub CLI](https://cli.github.com/) for `gh` to work.)*
-
----
-
-Would you like me to generate a ZIP file of the full repo you can import directly, or scaffold a Laravel wrapper next (`otp-laravel`)?
