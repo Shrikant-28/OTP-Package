@@ -1,29 +1,11 @@
-<?php 
+<?php
+
+namespace Tests;
+
 use PHPUnit\Framework\TestCase;
 use Shrikant\OTP\OTP;
+use Tests\InMemoryStore;
 use Shrikant\OTP\Storage\OTPStoreInterface;
-
-class InMemoryStore implements OTPStoreInterface
-{
-    private array $data = [];
-
-    public function set(string $key, string $otp, int $ttl): void
-    {
-        $this->data[$key] = ['otp' => $otp, 'expires' => time() + $ttl];
-    }
-
-    public function get(string $key): ?string
-    {
-        if (!isset($this->data[$key])) return null;
-        if ($this->data[$key]['expires'] < time()) return null;
-        return $this->data[$key]['otp'];
-    }
-
-    public function delete(string $key): void
-    {
-        unset($this->data[$key]);
-    }
-}
 
 class OTPTest extends TestCase
 {
@@ -40,12 +22,9 @@ class OTPTest extends TestCase
     public function testOtpExpires()
     {
         $store = new class implements OTPStoreInterface {
-            private $otp;
-            public function set(string $key, string $otp, int $ttl): void {
-                $this->otp = null; // simulate immediate expiry
-            }
+            public function set(string $key, string $otp, int $ttl): void {}
             public function get(string $key): ?string {
-                return $this->otp;
+                return null; // simulate expired OTP
             }
             public function delete(string $key): void {}
         };

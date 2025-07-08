@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 namespace Shrikant\OTP;
 
 use Shrikant\OTP\Storage\OTPStoreInterface;
